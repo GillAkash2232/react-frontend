@@ -5,6 +5,7 @@ import logo1 from './assets/logo1.png';
 import landing from './assets/landing.png';
 // import Login from './components/Login';
 import About from './components/About'; // Import About component
+import Contact from './components/Contact';
 // import Profile from './components/Profile';
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
           <ul className="nav-links">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About</Link></li> {/* About Page Link */}
-            <li><Link to="#">Contact</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
           </ul>
 
           <div className="navbar-button">
@@ -40,6 +41,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           {/* <Route path="/login" element={<Login />} /> */}
           <Route path="/about" element={<About  />} /> {/* Passing filePath */}
+          <Route path="/contact" element={<Contact  />} /> {/* Passing filePath */}
           {/* <Route path="/profile" element={<Profile />} /> */}
         </Routes>
       </div>
