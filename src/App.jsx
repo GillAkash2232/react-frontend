@@ -1,53 +1,66 @@
-import React, { useState } from 'react';
+// import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import logo1 from './assets/logo1.png';
 import landing from './assets/landing.png';
+// import Login from './components/Login';
+import About from './components/About'; // Import About component
+// import Profile from './components/Profile';
 
 function App() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
   return (
-    <div className="landing-page">
-      <nav className="navbar">
-        <div className="navbar-logo">
-          <img src={logo1} alt="Company Logo" className="logo" />
-          <h1 className="head">Jaldi Cart</h1>
-        </div>
+    <Router>
+      <div className="landing-page">
+        <nav className="navbar">
+          <div className="navbar-logo">
+            <img src={logo1} alt="Company Logo" className="logo" />
+            <h1 className="head">Jaldi Cart</h1>
+          </div>
 
-        {/* Hamburger Menu for Mobile */}
-        <div className="menu-toggle" onClick={toggleMenu}>
-          &#9776; {/* Hamburger icon */}
-        </div>
+          {/* Navbar Links */}
+          <ul className="nav-links">
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About</Link></li> {/* About Page Link */}
+            <li><Link to="#">Contact</Link></li>
+          </ul>
 
-        {/* Navbar Links */}
-        <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
+          <div className="navbar-button">
+            {/* <Link to="/login"> */}
+              <button className="start-shopping-button">Login Here</button>
+            {/* </Link> */}
+          </div>
 
-        <div className="navbar-button">
-          <button className="start-shopping-button">Login Here</button>
-        </div>
-      </nav>
+          <div className="menu-toggle">
+            &#9776;
+          </div>
+        </nav>
 
-      {/* Main Content */}
-      <div className={`landing-content ${menuOpen ? 'content-shift' : ''}`}>
+        {/* Routes */}
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          {/* <Route path="/login" element={<Login />} /> */}
+          <Route path="/about" element={<About  />} /> {/* Passing filePath */}
+          {/* <Route path="/profile" element={<Profile />} /> */}
+        </Routes>
+      </div>
+    </Router>
+  );
+}
+
+function LandingPage() {
+  return (
+    <div className="landing-content-wrapper-flex">
+      <div className="landing-content">
         <div className="landing-content-container">
           <h1>Welcome to Jaldi Cart!</h1>
           <p>
             Innovative solution designed to streamline the shopping experience by making checkout and billing faster, more efficient, and hassle-free. Our system leverages cutting-edge technology such as QR code scanning and mobile integration to provide a seamless shopping journey from start to finish.
           </p>
+          <button className="start-scanning">Start Shopping</button>
         </div>
-        <button className="start-scanning">Start Shopping</button>
       </div>
 
-      {/* Landing Image */}
-      <div className={`image-container ${menuOpen ? 'content-shift' : ''}`}>
+      <div className="image-container">
         <img src={landing} alt="Landing" className="logo1" />
       </div>
     </div>
