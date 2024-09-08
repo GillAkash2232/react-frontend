@@ -18,7 +18,10 @@ function App() {
           <h1 className="head">Jaldi Cart</h1>
         </div>
 
-        
+        {/* Hamburger Menu for Mobile */}
+        <div className="menu-toggle" onClick={toggleMenu}>
+          &#9776; {/* Hamburger icon */}
+        </div>
 
         {/* Navbar Links */}
         <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
@@ -30,15 +33,10 @@ function App() {
         <div className="navbar-button">
           <button className="start-shopping-button">Login Here</button>
         </div>
-
-        {/* Hamburger Menu for Mobile */}
-        <div className="menu-toggle" onClick={toggleMenu}>
-          &#9776; {/* Hamburger icon */}
-        </div>
       </nav>
 
-      {/* Landing Content */}
-      <div className="landing-content">
+      {/* Main Content */}
+      <div className={`landing-content ${menuOpen ? 'content-shift' : ''}`}>
         <div className="landing-content-container">
           <h1>Welcome to Jaldi Cart!</h1>
           <p>
@@ -49,7 +47,7 @@ function App() {
       </div>
 
       {/* Landing Image */}
-      <div className="image-container">
+      <div className={`image-container ${menuOpen ? 'content-shift' : ''}`}>
         <img src={landing} alt="Landing" className="logo1" />
       </div>
     </div>

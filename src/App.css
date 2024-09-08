@@ -13,8 +13,8 @@ body, html {
 .landing-page {
   text-align: center;
   margin: 0 auto;
-  max-width: 1200px;
-  padding: 0 20px;
+  max-width: 1500px;
+  padding: 0 0px;
 }
 
 /* Navbar Styles */
@@ -139,6 +139,19 @@ body, html {
   width: 100%;
   height: auto;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Responsive Styles */
 @media (max-width: 768px) {
