@@ -24,11 +24,11 @@ function App() {
             <li><Link to="#">Contact</Link></li>
           </ul>
 
-          <div className="navbar-button">
-            {/* <Link to="/login"> */}
+          {/* <div className="navbar-button">
+          
               <button className="start-shopping-button">Login Here</button>
-            {/* </Link> */}
-          </div>
+            
+          </div> */}
 
           <div className="menu-toggle">
             &#9776;
